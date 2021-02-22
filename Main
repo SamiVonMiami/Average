@@ -1,0 +1,52 @@
+//Written in C#
+public static sbyte score;
+        public static double totalScore;
+        public static double avrg;
+        public static int students;
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Type in Stop to stop it");
+            Average();
+            Console.ReadKey();
+        }
+
+        public static void Average()
+        {
+            string input = "";
+
+
+            try
+            {
+               for ( students = 0; input != "Stop"; students++)
+                {
+
+                    Console.Write("Please type in the points and then press enter: ");
+                    input = Console.ReadLine();
+                    if(input == "Stop" || input =="stop")
+                    {
+                        break;
+                    }
+                    score = SByte.Parse(input); 
+                    totalScore += score;
+                    Console.Clear();
+                } 
+            }
+            catch (System.Exception)
+            {
+                Console.WriteLine("Sorry to stop you here but you need a number! try again");
+                Console.ReadKey();
+                Console.Clear();
+                students = 0;
+                totalScore = 0;
+                score = 0;
+                Average();
+            }
+
+            avrg = totalScore / students;
+            System.Console.WriteLine("The total score is " + totalScore);
+            System.Console.WriteLine("The total amount of students are " + students);
+            Console.WriteLine("The average score is " + avrg);
+            Console.ReadKey();
+            Console.Clear();
+
+        }
