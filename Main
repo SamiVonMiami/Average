@@ -1,8 +1,11 @@
 //Written in C#
-public static sbyte score;
-        public static double totalScore;
-        public static double avrg;
+class Program
+    {
         public static int students;
+        public static double totalScore;
+        public static int score;
+        public static double avrg;
+
         static void Main(string[] args)
         {
             Console.WriteLine("Type in Stop to stop it");
@@ -50,3 +53,5 @@ public static sbyte score;
             Console.Clear();
 
         }
+        
+    }
